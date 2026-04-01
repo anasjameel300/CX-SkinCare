@@ -25,7 +25,7 @@ const PRODUCTS = [
 const ShontyCares = {
     uxMode: localStorage.getItem('uxMode') || 'good',
     cart: JSON.parse(localStorage.getItem('cart')) || [],
-    popupShown: false,
+    popupShown: localStorage.getItem('badUxPopupShown') === 'true',
     
     init() {
         this.applyUXMode();
@@ -41,7 +41,7 @@ const ShontyCares = {
 
         // Newsletter Popup Logic
         if (this.uxMode === 'bad' && !this.popupShown) {
-            setTimeout(() => this.showNewsletterPopup(), 2000);
+            setTimeout(() => this.showNewsletterPopup(), 1500);
         }
     },
 
@@ -106,7 +106,7 @@ const ShontyCares = {
             setTimeout(() => {
                 loader.remove();
                 callback();
-            }, delay);
+            }, 300);
         } else {
             callback();
             this.showToast('Product added to your ritual');
@@ -298,11 +298,16 @@ const ShontyCares = {
 
         closeBtn.onclick = () => {
             if (this.uxMode === 'bad') {
-                if (Math.random() > 0.2) {
-                    alert('ERROR: Please confirm you are not a robot by clicking OK 5 times.');
-                    for(let i=0; i<4; i++) alert('Are you sure? (' + (i+2) + '/5)');
+                if (Math.random() > 0.5) {
+                    alert('ERROR: Please confirm you are not a robot by clicking OK.');
+                    alert('Are you sure?');
+                    popup.remove();
+                    this.popupShown = true;
+                    localStorage.setItem('badUxPopupShown', 'true');
                 } else {
                     popup.remove();
+                    this.popupShown = true;
+                    localStorage.setItem('badUxPopupShown', 'true');
                 }
             } else {
                 popup.remove();

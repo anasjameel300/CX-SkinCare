@@ -1,79 +1,110 @@
-/* Bad UX v2 - Frustratingly Readable */
+/* Bad UX Refinement - "Boringly Dated" Aesthetic */
 
 body.bad-ux {
-    font-family: "Impact", sans-serif !important;
-    background-color: #00ff00 !important; /* Toxic Green */
-    color: #ff00ff !important; /* Magenta text */
-    line-height: 0.9 !important;
-    letter-spacing: -2px !important; /* Too tight but readable */
+    font-family: "Times New Roman", Times, serif !important;
+    background-color: #E0E0E0 !important; /* Dull Corporate Grey */
+    color: #000080 !important; /* Navy Blue Text */
+    line-height: 1.1 !important;
+    letter-spacing: 0.5px !important; /* Slightly off-putting but readable */
 }
 
+/* Specific overrides for unappealing borders and visibility */
 body.bad-ux * {
     transition: none !important;
-    border: 3px solid red !important;
-    margin: 2px !important;
-    padding: 2px !important;
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.5) !important;
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.2) !important;
+}
+
+/* Force reveal invisible content in Bad UX mode */
+body.bad-ux [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
 }
 
 body.bad-ux h1, body.bad-ux h2 {
-    font-family: "Comic Sans MS", cursive !important;
-    font-size: 50px !important;
-    text-transform: lowercase !important;
-    color: white !important;
-    background: black !important;
-    width: fit-content;
+    font-family: Arial, sans-serif !important;
+    font-size: 38px !important;
+    text-transform: none !important;
+    color: #800000 !important; /* Maroon headers */
+    background: transparent !important;
+    margin-bottom: 2rem !important;
 }
 
 body.bad-ux p {
-    font-size: 18px !important;
-    color: #ffff00 !important; /* Yellow on Green = Bad but readable */
+    font-size: 16px !important;
+    color: #444 !important;
 }
 
 body.bad-ux .nav {
     position: static !important;
-    background: blue !important;
-}
-
-body.bad-ux .nav-links {
-    display: block !important;
+    background: #C0C0C0 !important;
+    border-bottom: 3px double #FFF !important;
 }
 
 body.bad-ux .nav-link {
-    font-size: 25px !important;
-    color: white !important;
-    display: inline-block !important;
-    margin-right: 50px !important;
+    font-size: 18px !important;
+    color: #0000EE !important; /* Default link blue */
+    text-decoration: underline !important;
+    margin-right: 20px !important;
 }
 
 body.bad-ux .btn {
-    background: #ff8800 !important;
-    color: #0000ff !important;
-    font-size: 20px !important;
+    background: #DDD !important;
+    border: 2px outset #EEE !important;
+    color: #000 !important;
+    font-weight: normal !important;
+    border-radius: 4px !important;
+    padding: 0.5rem 1rem !important;
     cursor: help !important;
 }
 
 body.bad-ux .btn:hover {
-    transform: perspective(500px) rotateY(45deg) scale(0.5) !important; /* Makes it hard to click */
+    background: #EEE !important;
+    animation: jitter 0.1s infinite;
+}
+
+@keyframes jitter {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(1px, -1px); }
+    100% { transform: translate(-1px, 1px); }
 }
 
 body.bad-ux .product-grid {
-    display: block !important; /* No grid, just a long list */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 2rem !important;
 }
 
 body.bad-ux .product-card {
-    border-radius: 50% !important; /* Round cards, cuts off images */
-    overflow: hidden !important;
-    background: #ff00ff !important;
-    margin-bottom: 100px !important;
+    border: 1px solid #999 !important;
+    border-radius: 0 !important;
+    background: #FFF !important;
+    padding: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
 }
 
-/* Newsletter Popup - Peak Frustration */
+body.bad-ux .product-card a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+}
+
+body.bad-ux .product-thumb {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+/* Newsletter Popup Refined */
 body.bad-ux .newsletter-popup {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(255, 0, 0, 0.85); /* Semi-transparent red */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 99999;
     display: flex;
     align-items: center;
@@ -81,27 +112,27 @@ body.bad-ux .newsletter-popup {
 }
 
 body.bad-ux .popup-box {
-    background: white;
-    padding: 5rem;
+    background: #ffffcc; /* Sticky-note yellow */
+    padding: 3rem;
     position: relative;
-    border: 20px ridge yellow !important;
-    width: 90%;
+    border: 10px groove #999 !important;
+    width: 80%;
+    max-width: 600px;
     text-align: center;
 }
 
 body.bad-ux .close-popup {
     position: absolute;
-    top: 10px; right: 10px;
-    background: black;
-    color: white;
-    width: 20px; height: 20px;
-    font-size: 8px;
+    top: 5px; right: 5px;
+    background: #ccc;
+    color: #333;
+    width: 25px; height: 25px;
+    font-size: 10px;
     cursor: wait;
 }
 
 body.bad-ux .close-popup:hover {
-    top: 90%; /* Moves to bottom */
-    right: 90%; /* Moves to left */
+    transform: translate(10px, 10px); /* Subtle vibration/jump */
 }
 
 /* Bad Loader */
@@ -109,23 +140,19 @@ body.bad-ux .bad-loader {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: #000;
-    color: #0f0;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
     z-index: 100000;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    font-family: monospace;
+    font-size: 24px;
     text-align: center;
-    padding: 2rem;
 }
 
 body.bad-ux .cart-count {
-    font-size: 100px !important; /* Way too huge */
-    position: absolute;
-    top: 0; left: 0;
+    font-size: 40px !important;
+    color: #FF0000 !important;
+    font-weight: bold !important;
     background: none !important;
-    color: red !important;
-    pointer-events: none;
 }
