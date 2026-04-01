@@ -1,5 +1,5 @@
 /**
- * ShontyCares - Premium Evolution v2
+ * VCare - Premium Evolution v2
  * 
  * Centralized State, Dynamic Rendering, and UX Contrast.
  */
@@ -22,7 +22,7 @@ const PRODUCTS = [
     { id: 'lip-1', name: 'Lip Treatment Balm', price: 899.00, img: 'assets/products/lip.png', desc: 'Velvety, long-lasting moisture.' }
 ];
 
-const ShontyCares = {
+const VCare = {
     uxMode: localStorage.getItem('uxMode') || 'good',
     cart: JSON.parse(localStorage.getItem('cart')) || [],
     popupShown: localStorage.getItem('badUxPopupShown') === 'true',
@@ -252,11 +252,11 @@ const ShontyCares = {
                     <p>₹${item.price.toFixed(2)}</p>
                 </div>
                 <div class="qty">
-                    <button onclick="ShontyCares.updateQuantity('${item.id}', -1)">-</button>
+                    <button onclick="VCare.updateQuantity('${item.id}', -1)">-</button>
                     <span>${item.quantity}</span>
-                    <button onclick="ShontyCares.updateQuantity('${item.id}', 1)">+</button>
+                    <button onclick="VCare.updateQuantity('${item.id}', 1)">+</button>
                 </div>
-                <button class="remove" onclick="ShontyCares.removeFromCart('${item.id}')">&times;</button>
+                <button class="remove" onclick="VCare.removeFromCart('${item.id}')">&times;</button>
             </div>
         `).join('');
 
@@ -328,4 +328,4 @@ const ShontyCares = {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => ShontyCares.init());
+document.addEventListener('DOMContentLoaded', () => VCare.init());

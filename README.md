@@ -1,6 +1,6 @@
-# ShontyCares — Premium Botanical Skincare & UX Contrast Study
+# VCare — Premium Botanical Skincare & UX Contrast Study
 
-ShontyCares is a high-fidelity, content-rich e-commerce platform designed to demonstrate the stark contrast between premium "Good UX" and an intentionally flawed "Bad UX." Built for a modern skincare brand, this project showcases meticulous visual hierarchy, fluid animations, and a study in purposeful friction.
+VCare is a high-fidelity, content-rich e-commerce platform designed to demonstrate the stark contrast between premium "Good UX" and an intentionally flawed "Bad UX." Built for a modern skincare brand, this project showcases meticulous visual hierarchy, fluid animations, and a study in purposeful friction.
 
 ---
 
