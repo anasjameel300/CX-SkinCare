@@ -33,6 +33,7 @@ const ShontyCares = {
         this.setupEventListeners();
         this.updateCartCount();
         this.renderProducts();
+        this.initRevealAnimations();
         
         if (window.location.pathname.includes('cart.html')) {
             this.renderCart();
@@ -149,6 +150,19 @@ const ShontyCares = {
                         data-img="${p.img}">Quick Add</button>
             </div>
         `).join('');
+    },
+
+    initRevealAnimations() {
+        if (this.uxMode === 'good') {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+        }
     },
 
     observeProducts(container) {

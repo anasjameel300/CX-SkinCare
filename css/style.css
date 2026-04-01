@@ -266,6 +266,10 @@ a {
     overflow: hidden;
     width: 100%;
     padding: 2rem 0;
+    position: relative;
+    /* Soft edge masking for premium feel */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .carousel-track {
@@ -455,13 +459,43 @@ a {
     color: var(--clr-white);
 }
 
-.site-footer-bottom {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+/* Standardized Sub-page Header */
+.page-hero {
+    padding: 12rem 0 4rem;
     text-align: center;
-    color: #666;
-    font-size: 0.8rem;
+    background: var(--clr-secondary);
+}
+
+.page-hero .container {
+    max-width: 800px;
+}
+
+.page-hero h1 {
+    font-size: var(--fs-h2);
+    margin-bottom: 1.5rem;
+}
+
+.page-hero p {
+    color: #888;
+    line-height: 1.8;
+}
+
+/* Policy/Legal Layout */
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: var(--gap-xl);
+}
+
+.policy-content h2 {
+    margin: 3rem 0 1.5rem;
+    font-size: 1.4rem;
+    color: var(--clr-dark);
+}
+
+.policy-content p {
+    margin-bottom: 1.5rem;
+    color: var(--clr-text);
 }
 
 /* Responsive */
