@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ritual | ShontyCares Skincare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bad-ux.css">
+    <style>
+        .cart-hero { padding: 15rem 0 5rem; text-align: center; }
+        .cart-container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        #cart-list { margin-top: 5rem; }
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 2fr 1fr 50px;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .cart-item img { width: 100%; border-radius: 4px; background: #f7f7f7; }
+        .qty { display: flex; align-items: center; gap: 1rem; }
+        .qty button { background: none; border: 1px solid #ccc; width: 30px; height: 30px; cursor: pointer; }
+        .remove { background: none; border: none; font-size: 1.5rem; color: #ccc; cursor: pointer; }
+        .remove:hover { color: red; }
+        .summary {
+            margin-top: 5rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            backdrop-filter: blur(20px);
+            text-align: right;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ShontyCares</a>
+            <ul class="nav-links">
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="cart.html" class="nav-link active">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="cart-hero">
+        <div class="cart-container" data-reveal>
+            <h1 style="font-size: var(--fs-h2);">Your Shopping Bag</h1>
+            <p style="margin-top: 1rem; color: #888;">Items added to your daily botanical ritual.</p>
+        </div>
+    </header>
+
+    <main class="cart-container section-padding">
+        <div id="cart-list">
+            <!-- Dynamic Injection -->
+        </div>
+
+        <div class="summary">
+            <h3 style="margin-bottom: 2rem; font-size: 1.8rem;">Total: <span id="cart-total">$0.00</span></h3>
+            <button class="btn btn-primary" style="width: 100%;" onclick="alert('The Checkout Laboratory is preparing...')">Checkout &rarr;</button>
+            <p style="margin-top: 2rem; color: #888; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1rem;">Free Shipping on all rituals over $100.</p>
+        </div>
+    </main>
+
+    <!-- UX Toggle -->
+    <div class="ux-toggle">
+        <span class="toggle-label">Good UX</span>
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">Bad UX</span>
+    </div>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 5rem 0; color: #999;">
+            <h4 class="logo">ShontyCares</h4>
+            <p style="margin-top: 1rem;">2026 Crafted in Copenhagen.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All | ShontyCares Premium Skincare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bad-ux.css">
+</head>
+<body>
+
+    <nav class="nav" id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ShontyCares</a>
+            <ul class="nav-links">
+                <li><a href="shop.html" class="nav-link active">Shop All</a></li>
+                <li><a href="index.html#rituals" class="nav-link">Rituals</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="shop-header">
+        <div class="container" data-reveal>
+            <p style="text-transform: uppercase; letter-spacing: 0.2rem; font-size: 0.8rem; margin-bottom: 2rem;">Full Collection</p>
+            <h1 style="font-size: var(--fs-h2);">The Botanical Pharmacy</h1>
+            <p style="max-width: 600px; margin: 2rem auto;">Ethically sourced, high-performance skincare designed for the modern minimalist. No toxins. No fillers. Pure results.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <!-- Filter Bar Skeleton -->
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 1rem; margin-bottom: 3rem;">
+                <p style="font-size: 0.8rem; letter-spacing: 0.1em; color: #888;">Showing 15 Products</p>
+                <p style="font-size: 0.8rem; letter-spacing: 0.1em;">Filter &darr;</p>
+            </div>
+            
+            <!-- Dynamic Product Grid populated by main.js -->
+            <div class="product-grid dynamic" id="full-shop-grid">
+                <!-- JS Inject Here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- UX Toggle -->
+    <div class="ux-toggle">
+        <span class="toggle-label">Good UX</span>
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">Bad UX</span>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--clr-dark); padding: 5rem 0;">
+        <div class="container" style="text-align: center; color: var(--clr-white);">
+            <h4 class="logo">ShontyCares</h4>
+            <p style="margin-top: 2rem; color: #666;">Crafting future botanical skincare.</p>
+            <ul style="display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; list-style: none;">
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="shipping.html">Shipping</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>

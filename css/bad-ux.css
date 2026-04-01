@@ -1,0 +1,131 @@
+/* Bad UX v2 - Frustratingly Readable */
+
+body.bad-ux {
+    font-family: "Impact", sans-serif !important;
+    background-color: #00ff00 !important; /* Toxic Green */
+    color: #ff00ff !important; /* Magenta text */
+    line-height: 0.9 !important;
+    letter-spacing: -2px !important; /* Too tight but readable */
+}
+
+body.bad-ux * {
+    transition: none !important;
+    border: 3px solid red !important;
+    margin: 2px !important;
+    padding: 2px !important;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.5) !important;
+}
+
+body.bad-ux h1, body.bad-ux h2 {
+    font-family: "Comic Sans MS", cursive !important;
+    font-size: 50px !important;
+    text-transform: lowercase !important;
+    color: white !important;
+    background: black !important;
+    width: fit-content;
+}
+
+body.bad-ux p {
+    font-size: 18px !important;
+    color: #ffff00 !important; /* Yellow on Green = Bad but readable */
+}
+
+body.bad-ux .nav {
+    position: static !important;
+    background: blue !important;
+}
+
+body.bad-ux .nav-links {
+    display: block !important;
+}
+
+body.bad-ux .nav-link {
+    font-size: 25px !important;
+    color: white !important;
+    display: inline-block !important;
+    margin-right: 50px !important;
+}
+
+body.bad-ux .btn {
+    background: #ff8800 !important;
+    color: #0000ff !important;
+    font-size: 20px !important;
+    cursor: help !important;
+}
+
+body.bad-ux .btn:hover {
+    transform: perspective(500px) rotateY(45deg) scale(0.5) !important; /* Makes it hard to click */
+}
+
+body.bad-ux .product-grid {
+    display: block !important; /* No grid, just a long list */
+}
+
+body.bad-ux .product-card {
+    border-radius: 50% !important; /* Round cards, cuts off images */
+    overflow: hidden !important;
+    background: #ff00ff !important;
+    margin-bottom: 100px !important;
+}
+
+/* Newsletter Popup - Peak Frustration */
+body.bad-ux .newsletter-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 0, 0, 0.85); /* Semi-transparent red */
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.bad-ux .popup-box {
+    background: white;
+    padding: 5rem;
+    position: relative;
+    border: 20px ridge yellow !important;
+    width: 90%;
+    text-align: center;
+}
+
+body.bad-ux .close-popup {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: black;
+    color: white;
+    width: 20px; height: 20px;
+    font-size: 8px;
+    cursor: wait;
+}
+
+body.bad-ux .close-popup:hover {
+    top: 90%; /* Moves to bottom */
+    right: 90%; /* Moves to left */
+}
+
+/* Bad Loader */
+body.bad-ux .bad-loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    color: #0f0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: monospace;
+    text-align: center;
+    padding: 2rem;
+}
+
+body.bad-ux .cart-count {
+    font-size: 100px !important; /* Way too huge */
+    position: absolute;
+    top: 0; left: 0;
+    background: none !important;
+    color: red !important;
+    pointer-events: none;
+}

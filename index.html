@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShontyCares | Premium Botanical Skincare</title>
+    <meta name="description" content="Discover ShontyCares. High-performance, clean skincare formulated with botanical wisdom and clinical precision.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bad-ux.css">
+</head>
+<body>
+
+    <!-- Premium Navigation -->
+    <nav class="nav" id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ShontyCares</a>
+            <ul class="nav-links">
+                <li><a href="shop.html" class="nav-link">Shop All</a></li>
+                <li><a href="index.html#rituals" class="nav-link">Rituals</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+            <div class="mobile-toggle" style="display: none;">Menu</div>
+        </div>
+    </nav>
+
+    <!-- Hero v2 - High Impact -->
+    <header class="hero-v2">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-text" data-reveal>
+                <p style="text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 2rem; color: var(--clr-accent);">New Botanical Arrivals</p>
+                <h1>Skin health, <br><em>redefined by nature.</em></h1>
+                <p>A curated collection of minimalist essentials, crafted to respect your skin's natural barrier. Pure, potent, and proven.</p>
+                <div class="hero-actions">
+                    <a href="shop.html" class="btn btn-primary">Shop the Collection</a>
+                    <a href="#featured" class="btn" style="border: none; padding-left: 1rem; letter-spacing: 0.1em;">Our Story &rarr;</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper" data-reveal>
+                <img src="assets/products/mist.png" alt="Featured Skincare Product" class="hero-img-large">
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Minimalist Grid -->
+    <section class="section-padding" id="rituals">
+        <div class="container">
+            <div class="shop-header">
+                <h2 style="font-size: var(--fs-h2);">The Essential Trio</h2>
+                <p>Our most celebrated formulas for daily radiance.</p>
+            </div>
+            <!-- This grid will be populated partially by HTML or JS as a fallback -->
+            <div class="grid product-grid dynamic" id="featured-grid">
+                <!-- JS handles rendering here -->
+            </div>
+            <div style="text-align: center; margin-top: 5rem;">
+                <a href="shop.html" class="btn">View All 15 Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Philosophy -->
+    <section class="section-padding" style="background: #efecdf;">
+        <div class="container grid" style="grid-template-columns: 1fr 1fr; align-items: center; gap: var(--gap-l);">
+            <img src="assets/products/clay-mask.png" alt="Ingredients" style="width: 100%; border-radius: 4px;" data-reveal>
+            <div data-reveal>
+                <h2 style="margin-bottom: 1.5rem;">Clinical Precision, <br>Earthly Wisdom.</h2>
+                <p style="margin-bottom: 2rem;">We exclude over 2,500 questionable ingredients, focusing only on biocompatible molecules that your skin recognizes and uses to repair itself.</p>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 1rem;">&#12310; Cruelty-Free & Vegan &#12311;</li>
+                    <li style="margin-bottom: 1rem;">&#12310; Sustainable Packaging &#12311;</li>
+                    <li style="margin-bottom: 1rem;">&#12310; Fragrance-Free Formulas &#12311;</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- UX Toggle -->
+    <div class="ux-toggle">
+        <span class="toggle-label">Good UX</span>
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">Bad UX</span>
+    </div>
+
+    <!-- Newsletter Footer -->
+    <footer style="background: var(--clr-dark); color: var(--clr-white); padding: var(--gap-l) 0;">
+        <div class="container grid" style="grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+            <div style="grid-column: span 2;">
+                <h3 class="logo" style="color: var(--clr-white); border: none;">ShontyCares</h3>
+                <p style="color: #666; max-width: 300px; margin-top: 1.5rem;">Join our community for early access to rituals and botanical science updates.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: #888;">Shop</h4>
+                <ul style="list-style: none;">
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="shipping.html">Shipping</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: #888;">Legal</h4>
+                <ul style="list-style: none;">
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="shipping.html">Refunds</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #333; text-align: center; color: #555; font-size: 0.8rem;">
+            &copy; 2026 ShontyCares Skincare Laboratory.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

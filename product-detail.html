@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botanical Cleanser | ShontyCares Skincare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bad-ux.css">
+    <style>
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            padding-top: 150px;
+        }
+        .product-info h1 { margin-bottom: var(--space-s); }
+        .price { font-size: 1.5rem; color: var(--clr-accent); margin-bottom: var(--space-m); }
+        .description-tabs { margin-top: var(--space-l); }
+        .tab-content { padding: var(--space-m) 0; border-top: 1px solid rgba(0,0,0,0.1); }
+        
+        @media (max-width: 900px) {
+            .product-detail-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ShontyCares</a>
+            <ul class="nav-links">
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container product-detail-grid section-padding">
+        <div class="product-gallery">
+            <img src="assets/products/cleanser.png" alt="Botanical Cleanser" style="width: 100%; border-radius: 4px;">
+        </div>
+        <div class="product-info">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--clr-primary);">Daily Ritual</p>
+            <h1>Botanical Cleanser</h1>
+            <p class="price">$32.00</p>
+            <p>A gentle, non-stripping cleanser packed with botanical extracts to remove impurities while maintaining your skin's natural moisture barrier.</p>
+            
+            <div style="margin: var(--space-m) 0;">
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.8rem; text-transform: uppercase;">Size</label>
+                <select class="btn" style="width: 100%; margin-bottom: 1rem; text-align: left; padding-left: 1rem;">
+                    <option>100ml - $32.00</option>
+                </select>
+                <button class="btn btn-primary add-to-cart" 
+                        data-id="cleanser-1" 
+                        data-name="Botanical Cleanser" 
+                        data-price="32.00" 
+                        data-img="assets/products/cleanser.png"
+                        style="width: 100%;">Add to Cart</button>
+            </div>
+
+            <div class="description-tabs">
+                <div class="tab-content">
+                    <h4>Ingredients</h4>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-light); margin-top: 0.5rem;">
+                        Aloe Barbadensis Leaf Juice, Camellia Sinensis (Green Tea) Leaf Extract, Glycerin, Decyl Glucoside, Panthenol, Hyaluronic Acid.
+                    </p>
+                </div>
+                <div class="tab-content">
+                    <h4>How to Use</h4>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-light); margin-top: 0.5rem;">
+                        Massage a small amount onto damp skin in circular motions. Rinse with lukewarm water. Use AM and PM.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- UX Toggle -->
+    <div class="ux-toggle">
+        <span class="toggle-label">Good UX</span>
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">Bad UX</span>
+    </div>
+
+    <footer>
+        <div class="container grid footer-grid">
+            <h4 class="logo">ShontyCares</h4>
+            <ul style="display: flex; gap: var(--space-m);">
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="shipping.html">Shipping</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
