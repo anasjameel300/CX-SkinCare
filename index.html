@@ -25,7 +25,6 @@
 
     <!-- Hero v2 - High Impact -->
     <header class="hero-v2">
-        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-text" data-reveal>
                 <p style="text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 2rem; color: var(--clr-accent);">New Botanical Arrivals</p>
@@ -49,19 +48,21 @@
                 <h2 style="font-size: var(--fs-h2);">The Essential Trio</h2>
                 <p>Our most celebrated formulas for daily radiance.</p>
             </div>
-            <!-- This grid will be populated partially by HTML or JS as a fallback -->
-            <div class="grid product-grid dynamic" id="featured-grid">
-                <!-- JS handles rendering here -->
+            <!-- This grid will be populated by main.js as a carousel -->
+            <div class="carousel-container">
+                <div class="carousel-track" id="featured-carousel">
+                    <!-- JS handles rendering here -->
+                </div>
             </div>
-            <div style="text-align: center; margin-top: 5rem;">
-                <a href="shop.html" class="btn">View All 15 Products</a>
+            <div class="text-center" style="margin-top: 4rem;">
+                <a href="shop.html" class="btn">View All Products</a>
             </div>
         </div>
     </section>
 
     <!-- Brand Philosophy -->
-    <section class="section-padding" style="background: #efecdf;">
-        <div class="container grid" style="grid-template-columns: 1fr 1fr; align-items: center; gap: var(--gap-l);">
+    <section class="section-padding" style="background: var(--clr-secondary);">
+        <div class="container grid" style="grid-template-columns: 450px 1fr; align-items: center; gap: 4rem;">
             <img src="assets/products/clay-mask.png" alt="Ingredients" style="width: 100%; border-radius: 4px;" data-reveal>
             <div data-reveal>
                 <h2 style="margin-bottom: 1.5rem;">Clinical Precision, <br>Earthly Wisdom.</h2>
@@ -82,30 +83,30 @@
         <span class="toggle-label">Bad UX</span>
     </div>
 
-    <!-- Newsletter Footer -->
-    <footer style="background: var(--clr-dark); color: var(--clr-white); padding: var(--gap-l) 0;">
-        <div class="container grid" style="grid-template-columns: repeat(4, 1fr); gap: 2rem;">
-            <div style="grid-column: span 2;">
-                <h3 class="logo" style="color: var(--clr-white); border: none;">ShontyCares</h3>
-                <p style="color: #666; max-width: 300px; margin-top: 1.5rem;">Join our community for early access to rituals and botanical science updates.</p>
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container grid">
+            <div>
+                <h3 class="logo">ShontyCares</h3>
+                <p>Join our community for early access to rituals and botanical science updates.</p>
             </div>
             <div>
-                <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: #888;">Shop</h4>
-                <ul style="list-style: none;">
+                <h4>Shop</h4>
+                <ul>
                     <li><a href="shop.html">All Products</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="shipping.html">Shipping</a></li>
                 </ul>
             </div>
             <div>
-                <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: #888;">Legal</h4>
-                <ul style="list-style: none;">
+                <h4>Legal</h4>
+                <ul>
                     <li><a href="terms.html">Terms of Service</a></li>
                     <li><a href="shipping.html">Refunds</a></li>
                 </ul>
             </div>
         </div>
-        <div class="container" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #333; text-align: center; color: #555; font-size: 0.8rem;">
+        <div class="site-footer-bottom">
             &copy; 2026 ShontyCares Skincare Laboratory.
         </div>
     </footer>

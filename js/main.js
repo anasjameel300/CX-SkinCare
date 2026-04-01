@@ -113,15 +113,24 @@ const ShontyCares = {
     },
 
     renderProducts() {
+        // Render Standard Grid
         const grid = document.querySelector('.product-grid.dynamic');
-        if (!grid) return;
-
-        let filteredProducts = PRODUCTS;
-        if (grid.id === 'featured-grid') {
-            filteredProducts = PRODUCTS.slice(0, 3); // Only show first 3 on home
+        if (grid) {
+            grid.innerHTML = this.buildProductHTML(PRODUCTS);
+            this.observeProducts(grid);
         }
 
-        grid.innerHTML = filteredProducts.map(p => `
+        // Render Carousel
+        const carousel = document.getElementById('featured-carousel');
+        if (carousel) {
+            const doubleProducts = [...PRODUCTS, ...PRODUCTS]; // Duplicate for infinite scroll loop
+            carousel.innerHTML = this.buildProductHTML(doubleProducts);
+            this.observeProducts(carousel);
+        }
+    },
+
+    buildProductHTML(productsArray) {
+        return productsArray.map(p => `
             <div class="product-card" data-reveal>
                 <a href="product-detail.html?id=${p.id}">
                     <div class="product-thumb">
@@ -140,8 +149,9 @@ const ShontyCares = {
                         data-img="${p.img}">Quick Add</button>
             </div>
         `).join('');
+    },
 
-        // Intersection Observer for Good UX
+    observeProducts(container) {
         if (this.uxMode === 'good') {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -150,8 +160,7 @@ const ShontyCares = {
                     }
                 });
             }, { threshold: 0.1 });
-
-            document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+            container.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
         }
     },
 
@@ -216,7 +225,7 @@ const ShontyCares = {
         if (!list) return;
 
         if (this.cart.length === 0) {
-            list.innerHTML = '<div class="empty-state"><h3>Your Ritual is Empty</h3><a href="shop.html" class="btn">Explore Products</a></div>';
+            list.innerHTML = '<div class="empty-state" style="text-align: center; padding: 5rem 0;"><h3>Your Ritual is Empty</h3><a href="shop.html" class="btn" style="margin-top: 2rem;">Explore Products</a></div>';
             totalEl.textContent = '$0.00';
             return;
         }
