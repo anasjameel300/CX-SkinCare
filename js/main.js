@@ -5,21 +5,21 @@
  */
 
 const PRODUCTS = [
-    { id: 'cleanser-1', name: 'Botanical Cleanser', price: 32.00, img: 'assets/products/cleanser.png', desc: 'Gentle daily purification.' },
-    { id: 'serum-1', name: 'Hydrating Serum', price: 48.00, img: 'assets/products/serum.png', desc: 'Deep moisture replenishment.' },
-    { id: 'cream-1', name: 'Night Recovery Cream', price: 62.00, img: 'assets/products/cream.png', desc: 'Overnight cellular support.' },
-    { id: 'oil-1', name: 'Antioxidant Oil', price: 54.00, img: 'assets/products/oil.png', desc: 'Radiant environmental shield.' },
-    { id: 'mist-1', name: 'Rose Water Mist', price: 28.00, img: 'assets/products/mist.png', desc: 'Refreshing floral hydration.' },
-    { id: 'charcoal-1', name: 'Charcoal Detox Mask', price: 42.00, img: 'assets/products/charcoal.png', desc: 'Pore-clearing volcanic clay.' },
-    { id: 'vit-c-1', name: 'Vitamin C Drops', price: 58.00, img: 'assets/products/vit-c.png', desc: 'Brightening antioxidant boost.' },
-    { id: 'balm-1', name: 'Barrier Support Balm', price: 36.00, img: 'assets/products/balm.png', desc: 'Soothing lipid-rich repair.' },
-    { id: 'toner-1', name: 'Exfoliating Toner', price: 34.00, img: 'assets/products/toner.png', desc: 'Acid-balanced skin smoothing.' },
-    { id: 'eye-1', name: 'Overnight Eye Cream', price: 45.00, img: 'assets/products/eye.png', desc: 'Targets puffiness & fine lines.' },
-    { id: 'face-oil-2', name: 'Mineral Face Oil', price: 52.00, img: 'assets/products/face-oil-v2.png', desc: 'Ultra-lightweight nourishment.' },
-    { id: 'milky-1', name: 'Gentle Milky Cleanser', price: 30.00, img: 'assets/products/milky-cleanser.png', desc: 'Creamy, non-foaming wash.' },
-    { id: 'clay-1', name: 'Clarifying Clay Mask', price: 38.00, img: 'assets/products/clay-mask.png', desc: 'Refines texture and tone.' },
-    { id: 'moist-1', name: 'Peptide Moisturizer', price: 56.00, img: 'assets/products/moisturizer.png', desc: 'Firming amino acid complex.' },
-    { id: 'lip-1', name: 'Lip Treatment Balm', price: 18.00, img: 'assets/products/lip.png', desc: 'Velvety, long-lasting moisture.' }
+    { id: 'cleanser-1', name: 'Botanical Cleanser', price: 1499.00, img: 'assets/products/cleanser.png', desc: 'Gentle daily purification.' },
+    { id: 'serum-1', name: 'Hydrating Serum', price: 2499.00, img: 'assets/products/serum.png', desc: 'Deep moisture replenishment.' },
+    { id: 'cream-1', name: 'Night Recovery Cream', price: 3299.00, img: 'assets/products/cream.png', desc: 'Overnight cellular support.' },
+    { id: 'oil-1', name: 'Antioxidant Oil', price: 2899.00, img: 'assets/products/oil.png', desc: 'Radiant environmental shield.' },
+    { id: 'mist-1', name: 'Rose Water Mist', price: 1199.00, img: 'assets/products/mist.png', desc: 'Refreshing floral hydration.' },
+    { id: 'charcoal-1', name: 'Charcoal Detox Mask', price: 1999.00, img: 'assets/products/charcoal.png', desc: 'Pore-clearing volcanic clay.' },
+    { id: 'vit-c-1', name: 'Vitamin C Drops', price: 2999.00, img: 'assets/products/vit-c.png', desc: 'Brightening antioxidant boost.' },
+    { id: 'balm-1', name: 'Barrier Support Balm', price: 1699.00, img: 'assets/products/balm.png', desc: 'Soothing lipid-rich repair.' },
+    { id: 'toner-1', name: 'Exfoliating Toner', price: 1499.00, img: 'assets/products/toner.png', desc: 'Acid-balanced skin smoothing.' },
+    { id: 'eye-1', name: 'Overnight Eye Cream', price: 2299.00, img: 'assets/products/eye.png', desc: 'Targets puffiness & fine lines.' },
+    { id: 'face-oil-2', name: 'Mineral Face Oil', price: 2699.00, img: 'assets/products/face-oil-v2.png', desc: 'Ultra-lightweight nourishment.' },
+    { id: 'milky-1', name: 'Gentle Milky Cleanser', price: 1399.00, img: 'assets/products/milky-cleanser.png', desc: 'Creamy, non-foaming wash.' },
+    { id: 'clay-1', name: 'Clarifying Clay Mask', price: 1899.00, img: 'assets/products/clay-mask.png', desc: 'Refines texture and tone.' },
+    { id: 'moist-1', name: 'Peptide Moisturizer', price: 2799.00, img: 'assets/products/moisturizer.png', desc: 'Firming amino acid complex.' },
+    { id: 'lip-1', name: 'Lip Treatment Balm', price: 899.00, img: 'assets/products/lip.png', desc: 'Velvety, long-lasting moisture.' }
 ];
 
 const ShontyCares = {
@@ -139,7 +139,7 @@ const ShontyCares = {
                     </div>
                     <div class="product-meta">
                         <h3>${p.name}</h3>
-                        <p class="price">$${p.price.toFixed(2)}</p>
+                        <p class="price">₹${p.price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                         <p class="desc">${p.desc}</p>
                     </div>
                 </a>
@@ -240,7 +240,7 @@ const ShontyCares = {
 
         if (this.cart.length === 0) {
             list.innerHTML = '<div class="empty-state" style="text-align: center; padding: 5rem 0;"><h3>Your Ritual is Empty</h3><a href="shop.html" class="btn" style="margin-top: 2rem;">Explore Products</a></div>';
-            totalEl.textContent = '$0.00';
+            totalEl.textContent = '₹0.00';
             return;
         }
 
@@ -249,7 +249,7 @@ const ShontyCares = {
                 <img src="${item.img}" alt="${item.name}">
                 <div class="item-info">
                     <h4>${item.name}</h4>
-                    <p>$${item.price.toFixed(2)}</p>
+                    <p>₹${item.price.toFixed(2)}</p>
                 </div>
                 <div class="qty">
                     <button onclick="ShontyCares.updateQuantity('${item.id}', -1)">-</button>
@@ -261,7 +261,7 @@ const ShontyCares = {
         `).join('');
 
         const total = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        totalEl.textContent = `$${total.toFixed(2)}`;
+        totalEl.textContent = `₹${total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     },
 
     showNewsletterPopup() {

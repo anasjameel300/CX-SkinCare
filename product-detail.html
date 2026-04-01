@@ -9,17 +9,37 @@
     <style>
         .product-detail-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            padding-top: 150px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 6rem;
+            padding-top: 180px; /* Standardized high-end spacing */
+            align-items: flex-start;
         }
-        .product-info h1 { margin-bottom: var(--space-s); }
-        .price { font-size: 1.5rem; color: var(--clr-accent); margin-bottom: var(--space-m); }
-        .description-tabs { margin-top: var(--space-l); }
-        .tab-content { padding: var(--space-m) 0; border-top: 1px solid rgba(0,0,0,0.1); }
+        .product-gallery img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: var(--shadow-soft);
+        }
+        .product-info {
+            padding-top: 2rem;
+        }
+        .product-info h1 { 
+            font-size: var(--fs-h1); 
+            line-height: 1;
+            margin-bottom: 1rem; 
+        }
+        .price { 
+            font-size: 1.8rem; 
+            color: var(--clr-accent); 
+            margin-bottom: 3rem; 
+            font-weight: 300;
+        }
+        .description-tabs { margin-top: 4rem; }
+        .tab-content { padding: 2rem 0; border-top: 1px solid rgba(0,0,0,0.05); }
+        .tab-content h4 { margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: #888; }
         
-        @media (max-width: 900px) {
-            .product-detail-grid { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .product-detail-grid { grid-template-columns: 1fr; gap: 3rem; padding-top: 120px; }
+            .product-info { padding-top: 0; }
         }
     </style>
 </head>
@@ -36,27 +56,27 @@
         </div>
     </nav>
 
-    <main class="container product-detail-grid section-padding">
-        <div class="product-gallery">
-            <img src="assets/products/cleanser.png" alt="Botanical Cleanser" style="width: 100%; border-radius: 4px;">
+    <main class="container product-detail-grid">
+        <div class="product-gallery" data-reveal>
+            <img src="assets/products/cleanser.png" alt="Botanical Cleanser">
         </div>
-        <div class="product-info">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--clr-primary);">Daily Ritual</p>
+        <div class="product-info" data-reveal>
+            <p style="text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 2rem;">Daily Ritual</p>
             <h1>Botanical Cleanser</h1>
-            <p class="price">$32.00</p>
+            <p class="price">₹1,499.00</p>
             <p>A gentle, non-stripping cleanser packed with botanical extracts to remove impurities while maintaining your skin's natural moisture barrier.</p>
             
-            <div style="margin: var(--space-m) 0;">
-                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.8rem; text-transform: uppercase;">Size</label>
-                <select class="btn" style="width: 100%; margin-bottom: 1rem; text-align: left; padding-left: 1rem;">
-                    <option>100ml - $32.00</option>
+            <div style="margin: 3rem 0;">
+                <label style="display: block; margin-bottom: 1rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888;">Select Size</label>
+                <select class="btn" style="width: 100%; margin-bottom: 1.5rem; text-align: left; padding-left: 2rem; appearance: none; background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 2rem center / 12px; border-color: rgba(0,0,0,0.1);">
+                    <option>100ML - ₹1,499.00</option>
                 </select>
                 <button class="btn btn-primary add-to-cart" 
                         data-id="cleanser-1" 
                         data-name="Botanical Cleanser" 
-                        data-price="32.00" 
+                        data-price="1499.00" 
                         data-img="assets/products/cleanser.png"
-                        style="width: 100%;">Add to Cart</button>
+                        style="width: 100%;">Add to Bag</button>
             </div>
 
             <div class="description-tabs">
@@ -82,17 +102,34 @@
         <div class="toggle-switch"></div>
         <span class="toggle-label">Bad UX</span>
     </div>
-
-    <footer>
-        <div class="container grid footer-grid">
-            <h4 class="logo">ShontyCares</h4>
-            <ul style="display: flex; gap: var(--space-m);">
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="shipping.html">Shipping</a></li>
-            </ul>
+ 
+    <footer class="site-footer">
+        <div class="container grid">
+            <div>
+                <h3 class="logo">ShontyCares</h3>
+                <p>Join our community for early access to rituals and botanical science updates.</p>
+            </div>
+            <div>
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="shipping.html">Shipping</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="shipping.html">Refunds</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer-bottom">
+            &copy; 2026 ShontyCares Skincare Laboratory.
         </div>
     </footer>
-
+ 
     <script src="js/main.js"></script>
 </body>
 </html>
